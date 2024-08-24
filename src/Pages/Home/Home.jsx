@@ -165,7 +165,7 @@ const Home = () => {
                   <span>.</span>{" "}
                 </h2>
                 <p>software developer (MERN STACK)</p>
-                <a href="assets/download/Shirshendu_Pal_2024.pdf" download>
+                <a href="assets/download/shirshendu_pal_05_2024.pdf" download>
                   download resume
                 </a>
               </div>
