@@ -612,6 +612,7 @@ const Home = () => {
                               id="name"
                               placeholder="Name*"
                               name="from_name"
+                              required
                             />
                           </div>
                         </div>
@@ -623,6 +624,7 @@ const Home = () => {
                               id="email"
                               placeholder="Email*"
                               name="email_from"
+                              required
                             />
                           </div>
                         </div>
@@ -634,8 +636,9 @@ const Home = () => {
                               type="text"
                               class="form-control"
                               id="subject"
-                              placeholder="Subject"
+                              placeholder="Subject*"
                               name="subject"
+                              required
                             />
                           </div>
                         </div>
@@ -647,8 +650,9 @@ const Home = () => {
                               class="form-control"
                               rows="8"
                               id="comment"
-                              placeholder="Message"
+                              placeholder="Message*"
                               name="message"
+                              required
                             />
                           </div>
                         </div>
