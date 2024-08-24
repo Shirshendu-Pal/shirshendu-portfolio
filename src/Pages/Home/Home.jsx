@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ApiCall from "../../Api/ApiCall";
 import { startApiCall } from "../../Helpers/globalFunctions";
 import emailjs from "@emailjs/browser";
@@ -42,6 +42,40 @@ const Home = () => {
   //     setLoader(false);
   //   }
   // };
+
+  useEffect(() => {
+    // Use the IntersectionObserver API to replicate 'appear' functionality
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const progressBar = entry.target;
+          const tooltip = progressBar.getAttribute('data-toggle') === 'tooltip';
+          
+          if (tooltip) {
+            // Trigger tooltip
+            new window.bootstrap.Tooltip(progressBar, {
+              trigger: 'manual',
+            }).show();
+          }
+
+          // Animate progress bar
+          const width = progressBar.getAttribute('aria-valuenow');
+          progressBar.style.width = width + '%';
+        }
+      });
+    });
+
+    // Observe each progress bar
+    progressBars.forEach((bar) => {
+      observer.observe(bar);
+    });
+
+    // Cleanup observer on component unmount
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
 
   const form = useRef();
@@ -316,7 +350,7 @@ const Home = () => {
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          aria-valuenow="90"
+                          aria-valuenow="95"
                           aria-valuemin="10"
                           aria-valuemax="100"
                         ></div>
@@ -346,7 +380,7 @@ const Home = () => {
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          aria-valuenow="97"
+                          aria-valuenow="70"
                           aria-valuemin="10"
                           aria-valuemax="100"
                         ></div>
@@ -361,7 +395,7 @@ const Home = () => {
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          aria-valuenow="90"
+                          aria-valuenow="95"
                           aria-valuemin="10"
                           aria-valuemax="100"
                         ></div>
@@ -380,7 +414,7 @@ const Home = () => {
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          aria-valuenow="90"
+                          aria-valuenow="100"
                           aria-valuemin="10"
                           aria-valuemax="100"
                         ></div>
@@ -395,7 +429,7 @@ const Home = () => {
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          aria-valuenow="85"
+                          aria-valuenow="80"
                           aria-valuemin="10"
                           aria-valuemax="100"
                         ></div>
@@ -410,7 +444,7 @@ const Home = () => {
                         <div
                           class="progress-bar"
                           role="progressbar"
-                          aria-valuenow="97"
+                          aria-valuenow="50"
                           aria-valuemin="10"
                           aria-valuemax="100"
                         ></div>
