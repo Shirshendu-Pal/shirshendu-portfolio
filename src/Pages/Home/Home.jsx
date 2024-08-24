@@ -10,6 +10,24 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const Home = () => {
   const [loader, setloader] = useState(false);
+
+  const responsive = {
+    0: {
+      items: 1, // 1 item for screens from 0px to 479px
+    },
+    480: {
+      items: 2, // 2 items for screens from 480px to 767px
+    },
+    768: {
+      items: 3, // 3 items for screens from 768px to 1023px
+    },
+    1024: {
+      items: 4, // 4 items for screens above 1024px
+    },
+    1200: {
+      items: 5, // 5 items for screens above 1200px
+    },
+  };
   // API EXAMPLE
   // const handleAddPayment = async (e) => {
   //   e.preventDefault();
@@ -24,6 +42,8 @@ const Home = () => {
   //     setLoader(false);
   //   }
   // };
+
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -504,34 +524,33 @@ const Home = () => {
     <div class="clients-area">
         <div class="container">
             {/* <div class="owl-carousel owl-theme" id="client"> */}
-            <OwlCarousel className="owl-theme" loop margin={10} nav>
-            {/* <div className=""> */}
-                <div class="item">
-                    <a href="https://dashboard.sociohood.com" target="blank">
-                        <img src="assets/images/clients/c1.png" alt="brand-image" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://bizhood.in" target="blank">
-                        <img src="assets/images/clients/c2.png" alt="brand-image" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://technixia.com/" target="blank">
-                        <img src="assets/images/clients/c3.png" alt="brand-image" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://ogule.com" target="blank">
-                        <img src="assets/images/clients/c4.png" alt="brand-image" />
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.muktihealthcare.in/">
-                        <img src="assets/images/clients/c5.png" alt="brand-image" />
-                    </a>
-                </div>
-                </OwlCarousel>
+            <div class="carousel">
+    <div class="carousel-item">
+        <a href="https://dashboard.sociohood.com" target="blank">
+            <img src="assets/images/clients/c1.png" alt="brand-image"/>
+        </a>
+    </div>
+    <div class="carousel-item">
+        <a href="https://bizhood.in" target="blank">
+            <img src="assets/images/clients/c2.png" alt="brand-image"/>
+        </a>
+    </div>
+    <div class="carousel-item">
+        <a href="https://technixia.com/" target="blank">
+            <img src="assets/images/clients/c3.png" alt="brand-image"/>
+        </a>
+    </div>
+    <div class="carousel-item">
+        <a href="https://ogule.com" target="blank">
+            <img src="assets/images/clients/c4.png" alt="brand-image"/>
+        </a>
+    </div>
+    <div class="carousel-item">
+        <a href="https://www.muktihealthcare.in/">
+            <img src="assets/images/clients/c5.png" alt="brand-image"/>
+        </a>
+    </div>
+</div>
             {/* </div> */}
           </div>
         {/* </div> */}
