@@ -4,6 +4,9 @@ import { startApiCall } from "../../Helpers/globalFunctions";
 import emailjs from "@emailjs/browser";
 import { CirclesWithBar } from "react-loader-spinner";
 import toast, { Toaster } from 'react-hot-toast';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const Home = () => {
   const [loader, setloader] = useState(false);
@@ -85,6 +88,7 @@ const Home = () => {
                   <li class="smooth-menu">
                     <a href="#experience">experience</a>
                   </li>
+                  <li class="smooth-menu"><a href="#clients">projects</a></li>
                   <li class="smooth-menu">
                     <a href="#contact">contact</a>
                   </li>
@@ -492,6 +496,48 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section id="clients" class="clients">
+    <div class="section-heading text-center">
+        <h2>Main Projects</h2>
+    </div>
+    <div class="clients-area">
+        <div class="container">
+            {/* <div class="owl-carousel owl-theme" id="client"> */}
+            <OwlCarousel className="owl-theme" loop margin={10} nav>
+            {/* <div className=""> */}
+                <div class="item">
+                    <a href="https://dashboard.sociohood.com" target="blank">
+                        <img src="assets/images/clients/c1.png" alt="brand-image" />
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://bizhood.in" target="blank">
+                        <img src="assets/images/clients/c2.png" alt="brand-image" />
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://technixia.com/" target="blank">
+                        <img src="assets/images/clients/c3.png" alt="brand-image" />
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://ogule.com" target="blank">
+                        <img src="assets/images/clients/c4.png" alt="brand-image" />
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://www.muktihealthcare.in/">
+                        <img src="assets/images/clients/c5.png" alt="brand-image" />
+                    </a>
+                </div>
+                </OwlCarousel>
+            {/* </div> */}
+          </div>
+        {/* </div> */}
+    </div>
+</section>
+
 
       <section id="contact" class="contact">
         <div class="section-heading text-center">
